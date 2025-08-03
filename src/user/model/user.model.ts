@@ -30,6 +30,24 @@ const UserSchema = new Schema<User>({
         unique:true,
         required:true
     },
+    is_profile_completed:{
+        type:Boolean,
+        default:false
+    },
+    status:{
+        type:Number,
+        enum:[0,1,2],
+        default:1
+    },
+    country_code:{
+        type: String,
+        trim: true,
+        required:true
+    },
+    created_at:{
+        type:Date,
+        default:new Date
+    }
 })
 
 

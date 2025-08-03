@@ -14,7 +14,8 @@ server.use(process.env.API_PREFIX || '/api', mainRoute)
 
 const startServer =async () => {
     try {
-        await dbConnection();
+        await dbConnection()
+        // .then(res=>console.log('object',res))
         server.listen(process.env.PORT, () => {
             console.log(`🚀 Server is running on ${process.env.PORT}`);
         });

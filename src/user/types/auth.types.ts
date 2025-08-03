@@ -17,8 +17,8 @@ export type GetOtp = InferType<typeof validationSchema.otpValidationSchema>;
 export interface MobileOtp extends Document {
   mobile: string;
   otp: string;
-  createdAt: Date;
-  countryCode: string
+  created_at: Date;
+  country_code: string
 }
 
 export type VerifyOtp = InferType<typeof validationSchema.otpVerifyValidationSchema>

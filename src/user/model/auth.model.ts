@@ -13,12 +13,12 @@ const MobileOtpSchema = new Schema<authTypes.MobileOtp>({
         type: String,
         default:'1234'
     },
-    createdAt: {
+    created_at: {
         type: Date,
         default: new Date,
-        expires: 1300
+        expires: 300
     },
-    countryCode: {
+    country_code: {
         type: String,
         trim: true,
     }

@@ -9,7 +9,7 @@ export const otpValidationSchema = yup.object({
     .max(12, 'Mobile number must be at most 12 digits')
     .matches(/^\d+$/, 'Mobile number must be numeric'),
 
-  countryCode: yup
+  country_code: yup
     .string()
     .required('Country code is required')
     .matches(/^\+\d+$/, 'Invalid country code'),
@@ -30,7 +30,7 @@ export const otpVerifyValidationSchema = yup.object({
     .min(9, 'Mobile number must be at least 9 digits')
     .max(12, 'Mobile number must be at most 12 digits')
     .matches(/^\d+$/, 'Mobile number must be numeric'),
-  countryCode: yup
+  country_code: yup
     .string()
     .required('Country code is required')
     .matches(/^\+\d+$/, 'Invalid country code'),
