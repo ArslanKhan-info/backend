@@ -86,7 +86,7 @@ export const verifyOtp = async (data: authTypes.VerifyOtp): Promise<authTypes.Se
                         }
                     }
                 } else {
-                    const token = generateJWT({ id: user?._id })
+                    const token = generateJWT({ id: (user as any )?._id })
                     const newUser = await userServices.createUser({
                         mobile: data.mobile,
                         country_code: data.country_code
@@ -97,7 +97,8 @@ export const verifyOtp = async (data: authTypes.VerifyOtp): Promise<authTypes.Se
                             status: true,
                             message: 'Mobile number registered successfully',
                             token,
-                            user_data: newUser
+                            user_data: newUser,
+                            is_profile_completed: false,
                         }
                     }
                 }

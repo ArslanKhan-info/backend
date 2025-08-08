@@ -10,6 +10,7 @@ const validate = (schema: AnySchema) => async (
     req.body = await schema.validate(req.body, { abortEarly: true, stripUnknown: true });
     next();
   } catch (err: any) {
+    console.log('error in validation middleware==>', err,req.body);
     return res.status(400).json({
       success: false,
       message: err.message,

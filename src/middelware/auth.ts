@@ -7,7 +7,7 @@ env.config(
 
 )
 interface CustomeRequest extends Request {
-    user: string | JwtPayload,
+    user: string | JwtPayload ,
     token: string | JwtPayload
 }
 
